@@ -301,7 +301,8 @@ output {
 }
 
 /* Show the direct sub dropdown when hovering the list item */
-.p-nested-dropdowns li:hover > ul {
+.p-nested-dropdowns li:hover > ul,
+.p-nested-dropdowns li:active > ul{
   display: block;
   flex-direction: column;
 }
@@ -314,7 +315,8 @@ output {
   /* box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08); */
 }
 
-.pushUpBtn:hover {
+.pushUpBtn:hover,
+.pushUpBtn:active {
   transform: translate3d(0px, -1px, 0px);
   background-color: rgb(169, 206, 255);
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
