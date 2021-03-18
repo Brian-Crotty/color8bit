@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Bit Color Conversion</title>
+    <link rel="stylesheet" href="hex-color-8-bit-style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script defer src="color_converter_8_bit.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>8-Bit Color Converter</h1>
+    </header>
+
+    <form class="wrap-byte1">
+        <h2>Byte One Value</h2>
+        <fieldset name="byte1-radio" class="radio-group">
+            <label for="b1option0"><input type="radio" name="byte1" id="b1option0"> 0</label>
+            <label for="b1option1"><input type="radio" name="byte1" id="b1option1"> 1</label>
+            <label for="b1option2"><input type="radio" name="byte1" id="b1option2"> 2</label>
+            <label for="b1option3"><input type="radio" name="byte1" id="b1option3"> 3</label>
+            <label for="b1option4"><input type="radio" name="byte1" id="b1option4"> 4</label>
+            <label for="b1option5"><input type="radio" name="byte1" id="b1option5"> 5</label>
+            <label for="b1option6"><input type="radio" name="byte1" id="b1option6"> 6</label>
+            <label for="b1option7"><input type="radio" name="byte1" id="b1option7"> 7</label>
+            <label for="b1option8"><input type="radio" name="byte1" id="b1option8"> 8</label>
+            <label for="b1option9"><input type="radio" name="byte1" id="b1option9"> 9</label>
+            <label for="b1optionA"><input type="radio" name="byte1" id="b1optionA" checked> A</label>
+            <label for="b1optionB"><input type="radio" name="byte1" id="b1optionB"> B</label>
+            <label for="b1optionC"><input type="radio" name="byte1" id="b1optionC"> C</label>
+            <label for="b1optionD"><input type="radio" name="byte1" id="b1optionD"> D</label>
+            <label for="b1optionE"><input type="radio" name="byte1" id="b1optionE"> E</label>
+            <label for="b1optionF"><input type="radio" name="byte1" id="b1optionF"> F</label>
+        </fieldset>
+    </form>
+
+    <form action="" class="wrap-byte2">
+        <h2>Byte Two Value</h2>
+        <fieldset name="byte2-radio" class="radio-group">
+            <label for="b2option0"><input type="radio" name="byte2" id="b2option0"> 0</label>
+            <label for="b2option1"><input type="radio" name="byte2" id="b2option1"> 1</label>
+            <label for="b2option2"><input type="radio" name="byte2" id="b2option2"> 2</label>
+            <label for="b2option3"><input type="radio" name="byte2" id="b2option3"> 3</label>
+            <label for="b2option4"><input type="radio" name="byte2" id="b2option4"> 4</label>
+            <label for="b2option5"><input type="radio" name="byte2" id="b2option5"> 5</label>
+            <label for="b2option6"><input type="radio" name="byte2" id="b2option6" checked> 6</label>
+            <label for="b2option7"><input type="radio" name="byte2" id="b2option7"> 7</label>
+            <label for="b2option8"><input type="radio" name="byte2" id="b2option8"> 8</label>
+            <label for="b2option9"><input type="radio" name="byte2" id="b2option9"> 9</label>
+            <label for="b2optionA"><input type="radio" name="byte2" id="b2optionA"> A</label>
+            <label for="b2optionB"><input type="radio" name="byte2" id="b2optionB"> B</label>
+            <label for="b2optionC"><input type="radio" name="byte2" id="b2optionC"> C</label>
+            <label for="b2optionD"><input type="radio" name="byte2" id="b2optionD"> D</label>
+            <label for="b2optionE"><input type="radio" name="byte2" id="b2optionE"> E</label>
+            <label for="b2optionF"><input type="radio" name="byte2" id="b2optionF"> F</label>
+        </fieldset>
+    </form>
+
+    <ul class=" output-bin horizontalOverlay p-nested-dropdowns">
+        <li><output id="binary">00000000</output><span class="up-arrow">&#9652</span>
+            <ul >
+                <li class="horizontalOverlay"> Converter
+                    <ul>
+                        <li ><button class="pushUpBtn" onclick='hex.setUpdateToRGB()'>RGB</button></li>
+                        <li ><button class="pushUpBtn" onclick='hex.setUpdateToHSL()'>HSL</button></li>
+                    </ul>
+                </li>
+                <li class="horizontalOverlay"> Output
+                    <ul>
+                        <li><button class="pushUpBtn" onclick="hex.updateOutVal(0)">Binary</button></li>
+                        <li><button class="pushUpBtn" onclick="hex.updateOutVal(1)">Color&#160Code</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>

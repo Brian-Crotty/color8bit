@@ -1,0 +1,313 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Modern CSS Reset by Andy Bell */
+
+@font-face {
+  font-family: "Atkinson-Hyperlegible";
+  src: url("./font/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Notulen";
+  src: url("./font/notulen_serif_display_extra_bold_-webfont.woff2")
+    format("woff2");
+}
+
+:root {
+  --txt-color: #333;
+  --bg-color: #eee;
+  font-family: "Atkinson-Hyperlegible", sans-serif;
+}
+
+body {
+  background-color: rgb(120, 58, 58);
+  height: 100vh;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5rem) minmax(min-content, max-content) minmax(40%, auto)
+    minmax(min-content, max-content) minmax(0, 1.5rem);
+  grid-template-rows:
+    minmax(min-content, 10%) minmax(0, 3rem) 70% minmax(0, 3rem)
+    minmax(0, auto);
+  grid-template-areas:
+    "t t t t t"
+    ". . . . ."
+    "fl ml mc mr fr"
+    ". . . . ."
+    "b b b b b";
+}
+
+body > * {
+  color: var(--txt-color);
+  background-color: var(--bg-color);
+  box-shadow: 0 0.9px 4.8px rgba(0, 0, 0, 0.041),
+    0 2.2px 7.1px rgba(0, 0, 0, 0.062), 0 4.4px 10.6px rgba(0, 0, 0, 0.087),
+    0 9.1px 19.2px rgba(0, 0, 0, 0.124), 0 25px 63px rgba(0, 0, 0, 0.21);
+}
+
+header {
+  grid-area: t;
+  font-family: "Notulen";
+  text-align: center;
+  font-size: larger;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.wrap-byte1 {
+  grid-area: ml;
+}
+
+.wrap-byte2 {
+  grid-area: mr;
+}
+
+form {
+  justify-self: center;
+  height: 100%;
+  border: 0;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  margin: 0.25rem;
+  text-align: center;
+}
+
+.radio-group {
+  border: none;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 10rem;
+}
+
+label {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 3rem;
+  /* margin: auto; */
+}
+
+label:hover {
+  border-radius: 0.5rem;
+
+  box-shadow: 0 1.4px 2.9px rgba(0, 0, 0, 0.053),
+    0 3.8px 7.9px rgba(0, 0, 0, 0.081), 0 9px 19px rgba(0, 0, 0, 0.121),
+    0 30px 63px rgba(0, 0, 0, 0.22);
+}
+
+label * {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  vertical-align: baseline;
+}
+
+output {
+  display: inline-block;
+}
+
+.output-bin {
+  /* box-shadow: inherit; */
+  grid-area: b;
+  font-size: 2em;
+  place-self: center;
+  border-radius: 0.8rem;
+  display: block;
+  translate: 0 -1em;
+  /* padding: 0.25rem; */
+}
+
+output{
+  padding-left: .5ch;
+  padding-right: .25ch;
+}
+
+.horizontalOverlay::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(243, 42%, 51%);
+  opacity: 0.1;
+  transform: scaleX(0);
+  transform-origin: 100% 100%;
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+  will-change: transform;
+}
+
+.horizontalOverlay:hover::before {
+  transform-origin: 0 0;
+  transform: scaleX(1);
+}
+
+/* The root */
+.p-nested-dropdowns {
+  /* Reset list styles */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.p-nested-dropdowns li {
+  position: relative;
+}
+
+.p-nested-dropdowns li li {
+  padding: 0.5rem;
+  /* border: 0.5rem solid transparent; */
+  columns: inherit;
+  background-color: var(--bg-color);
+  border-radius: 0.8rem;
+  height: min-content;
+  margin-bottom: 0.5ch;
+  width: fit-content;
+  box-shadow: 0 1.4px 2.9px rgba(0, 0, 0, 0.053),
+    0 3.8px 7.9px rgba(0, 0, 0, 0.081), 0 9px 19px rgba(0, 0, 0, 0.121),
+    0 30px 63px rgba(0, 0, 0, 0.22);
+  /* border-left: 1ch solid transparent; */
+}
+.p-nested-dropdowns li li li{
+  width: min-content;
+  height: min-content;
+  background-color: transparent;
+  padding: 0;
+}
+/* The sub dropdown */
+.p-nested-dropdowns ul {
+  /* Hidden by default */
+  display: none;
+  font-size: medium;
+  border-radius: 0.8rem;
+
+  /* Absolute position */
+  right: 0%;
+  position: absolute;
+  bottom: 100%;
+
+  /* Reset styles */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  /* Width */
+  width: min-content;
+}
+
+/* The second level sub dropdown */
+.p-nested-dropdowns ul ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  height: 6em;
+  padding-left: .5ch;
+}
+
+.p-nested-dropdowns button {
+  /* color: inherit;
+  background-color: inherit;
+  border: none; */
+  display: inline-block;
+  width: fit-content;
+  padding: .5rem;
+}
+
+/* Show the direct sub dropdown when hovering the list item */
+.p-nested-dropdowns li:hover > ul {
+  display: block;
+}
+
+
+.pushUpBtn {
+    border: none;
+    border-radius: .8rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    /* box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08); */
+}
+
+.pushUpBtn:hover{
+    transform: translate3d(0px,-1px,0px);
+    background-color: rgb(169, 206, 255);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
