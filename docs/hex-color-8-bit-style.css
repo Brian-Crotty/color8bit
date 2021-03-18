@@ -75,12 +75,12 @@ select {
 
 @font-face {
   font-family: "Atkinson-Hyperlegible";
-  src: url("./font/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
+  src: url("../font/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Notulen";
-  src: url("./font/notulen_serif_display_extra_bold_-webfont.woff2")
+  src: url("../font/notulen_serif_display_extra_bold_-webfont.woff2")
     format("woff2");
 }
 
