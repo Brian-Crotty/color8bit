@@ -84,7 +84,7 @@ let hex = {
     this.update()
   },
   updateOutput: function(temp){
-    this.updateBinary()
+    this.updateColorCode(temp)
   },
   updateBinary: function () {
     output.innerText = parseInt(this.b1 + this.b2, 16)
