@@ -26,7 +26,7 @@ function getBitRange(num, start, end) {
  * @param {string} byteIn up to 2 byte hexidecimal string
  * @returns an array of red green and blue between 0 and 255
  */
-function hexToRGBArray(byteIn = "76") {
+function hexToRGBArray(byteIn = "00") {
   byteIn = parseInt(byteIn, 16);
   let red = Math.round((getBitRange(byteIn, 5, 8) / 7.0) * 255.0);
   let green = Math.round((getBitRange(byteIn, 2, 5) / 7.0) * 255.0);
@@ -35,16 +35,16 @@ function hexToRGBArray(byteIn = "76") {
 }
 
 /**
- * Converts 2 byte hexidecimal string input to 8 bit color hsl values
- * @param {string} byteIn up to 2 byte hexidecimal string
+ * Converts 2 byte hexidecimal string input to 8 bit color hsl values 
+ * @param {string} byteOg up to 2 byte hexidecimal string
  * @returns an array of hue, saturation, and lightness between 0 and 360, 0:100, and 0:100
  */
-function hexToHSLArray(byteIn = "76") {
-  byteIn = parseInt(byteIn, 16);
-  let hue = Math.round((getBitRange(byteIn, 4, 8) / 16.0) * 360.0);
-  let saturation = 35 + Math.round((getBitRange(byteIn, 0, 3) / 7.0) * 65.0);
-  let lightness = 35 + Math.round(getBit(byteIn, 3) * 30.0);
-  return [hue, saturation, lightness];
+function hexToHSLArray(byteOg = "00") {
+  let byteIn = parseInt(byteOg,16)
+  let hue = Math.round((getBitRange(byteIn, 4, 8) / 16.0) * 360.0)
+  let saturation = 40 + Math.round((( getBitRange(byteIn,0,3) / 7.0)) * 60.0)
+  let lightness = 69 + Math.round(getBit(byteIn, 3) * 11.0)
+  return [hue, saturation, lightness]
 }
 
 /**

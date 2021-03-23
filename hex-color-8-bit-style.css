@@ -104,6 +104,12 @@ body {
     )
     minmax(-webkit-min-content, -webkit-max-content) minmax(0, 1.5rem);
   grid-template-columns:
+    minmax(0, 1.5rem) minmax(-webkit-min-content, -webkit-max-content) minmax(
+      40%,
+      auto
+    )
+    minmax(-webkit-min-content, -webkit-max-content) minmax(0, 1.5rem);
+  grid-template-columns:
     minmax(0, 1.5rem) minmax(-webkit-min-content, -webkit-max-content) minmax(40%, auto)
     minmax(-webkit-min-content, -webkit-max-content) minmax(0, 1.5rem);
   grid-template-columns:
@@ -302,7 +308,7 @@ output {
 
 /* Show the direct sub dropdown when hovering the list item */
 .p-nested-dropdowns li:hover > ul,
-.p-nested-dropdowns li:active > ul{
+.p-nested-dropdowns li:active > ul {
   display: block;
   flex-direction: column;
 }
